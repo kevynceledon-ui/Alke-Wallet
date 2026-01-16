@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Transacciones</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-main-viva mt-0 sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center mr-5" href="#">
+            <img src="./assets/img/AlkeLogo-Photoroom.png" height=" 80" width="150" alt="Alke Wallet Logo"
+                class="d-inline-blockrounded ">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav mr-auto ml-auto ">
+                <li class="nav-item"><a class="nav-link nav-link-viva" href="menu.html">Menu Principal</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-viva" href="transactions.html">Transacciones</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-viva mr-5" href="#">Mercado</a></li>
+                <li class="nav-item ml">
+                    <span id="SaludoNav" class="navbar-text small ml-5"> Cargando saludo...</span>
+                    <button class="btn btn-danger rounded-pill font-weight-bold ml-5" onclick="salir()">
+                     Salir
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+
+    <div class="row mb-5">
+        <div class="col-12">
+
+            <div class="card saldo-1 text-white shadow-lg p-4 "
+                <div class="card-body justify-content-between align-items-center">
+
+                    <div>
+                        <h5 class="text-uppercase mb-0 opacity-75">Saldo Disponible</h5>
+                        <h1 class="display-4 font-weight-bold " id="saldo-display"></h1>
+                    </div>
+
+
+                    <div class="d-none d-md-block">
+                        <a class="fas fa-wallet fa-4x opacity-50"></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="row justify-content-center">
+    
+    <div class="col-md-4 mb-3">
+        <a href="deposit.html" class="btn btn-primary-custom rounded-pill btn-lg btn-block py-3 d-flex align-items-center justify-content-center">
+           <i class="fas fa-wallet mr-2"></i> 
+           Depositar Dinero
+        </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <a href="sendmoney.html" class="btn btn-primary-custom rounded-pill btn-lg btn-block py-3 d-flex align-items-center justify-content-center">
+           <i class="fas fa-paper-plane mr-2"></i> Transferir
+        </a>
+    </div>
+
+</div>
+
+
+<body>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/js/credencial.js"></script>
+</body>
+
+</html>

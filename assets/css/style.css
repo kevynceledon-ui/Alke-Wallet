@@ -1,0 +1,314 @@
+:root {
+    /* --- BASE (Fondos) --- */
+    --bg-app: #0b0b0f;
+    /* Negro profundo */
+    --bg-card: #18181b;
+    /* Gris muy oscuro */
+
+    /* --- ACENTOS --- */
+    --color-primary: #4b2d8f;
+    /* Violeta Vibrante */
+    --color-hover: #60469e;
+    /* Violeta intenso */
+    --gradient-main: linear-gradient(135deg, #37206d 20%, #7a204d 100%);
+
+    /* --- TEXTO --- */
+    --text-main: #fafafa;
+    --text-muted: #a1a1aa;
+    --font-family: 'Poppins', sans-serif;
+    /* Lo aclaré un poco para que se lea mejor en fondo negro */
+
+    /* --- ESTADOS --- */
+    --success: #34d399;
+    --error: #fb7185;
+}
+
+/* 1. APLICAR FONDO OSCURO GLOBAL */
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    font-family: var(--font-family);
+}
+
+/* 2. CLASES PERSONALIZADAS PARA USAR EN TU HTML */
+
+/* Fondo para tarjetas o barras de navegación */
+.bg-dark-card {
+    background-color: var(--bg-card) !important;
+}
+
+/* Texto color violeta (para el Logo o enlaces activos) */
+.text-primary-custom {
+    color: var(--color-primary) !important;
+}
+
+/* 3. BOTONES CON DEGRADADO (El toque moderno) */
+.btn-primary-custom {
+    background: var(--gradient-main);
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s;
+    /* Pequeña animación al pasar el mouse */
+}
+
+.btn-primary-custom:hover {
+    transform: scale(1.05);
+    /* Crece un poquito */
+    color: white;
+    box-shadow: 0 0 15px rgba(112, 71, 209, 0.5);
+    /* Resplandor violeta */
+}
+
+/* --- ESTILOS DEL NAVBAR VIVO --- */
+
+/* 1. Barra Superior con Degradado Sutil */
+.navbar-top-viva {
+    /* Usamos tu degradado, pero con transparencia para que no sea tan intenso */
+    background: linear-gradient(to right, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Línea separadora sutil */
+    backdrop-filter: blur(5px);
+    /* Efecto de desenfoque moderno (opcional) */
+}
+
+.navbar-top-viva .nav-link:hover {
+    color: var(--text-main) !important;
+    /* Texto blanco al pasar el mouse */
+}
+
+/* 2. Barra Principal con Borde y Resplandor */
+.navbar-main-viva {
+    background-color: rgba(11, 11, 15, 0.8);
+    /* Fondo negro semitransparente */
+    border-bottom: 1px solid;
+    border-image: var(--gradient-main) 1;
+    /* El borde inferior es tu degradado */
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+    /* Un resplandor violeta suave hacia abajo */
+    backdrop-filter: blur(10px);
+    /* Efecto de vidrio */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al hacer scroll (opcional, requiere un poquito de JS) */
+.navbar-main-viva.scrolled {
+    background-color: var(--bg-app);
+    /* Se vuelve negro sólido al bajar */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* 3. Enlaces del Menú Animados */
+.nav-link-viva {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    position: relative;
+    /* Necesario para el efecto de subrayado */
+    transition: color 0.3s ease;
+}
+
+.nav-link-viva:hover,
+.nav-link-viva.active {
+    color: var(--text-main) !important;
+}
+
+/* Efecto de subrayado animado */
+.nav-link-viva::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: var(--gradient-main);
+    /* Subrayado con tu degradado */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+
+
+.nav-link-viva:hover::after,
+.nav-link-viva.active::after {
+    width: 80%;
+    /* El subrayado crece al pasar el mouse */
+}
+
+.split-img {
+    /* 1. Obliga a la imagen a llenar todo el ancho de su columna */
+    width: 100%;
+
+    /* 2. Define una altura fija para que todas las slides sean iguales.
+          En diseño split, 100vh significa "el alto total de la pantalla", 
+          pero para un hero suele usarse entre 500px y 600px */
+    height: 100%;
+
+    /* 3. LA CLAVE: Recorta la imagen para que llene el espacio sin estirarse */
+    object-fit: cover;
+
+    /* 4. Asegura que no queden bordes raros */
+    display: block;
+}
+
+.carruseltexto {
+    background: var(--gradient-main);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+
+/* Estilo para el contenedor de la tarjeta */
+.product-card {
+    /* Usamos el color de fondo secundario (gris oscuro) */
+    background-color: var(--bg-card);
+
+    /* Esquinas redondeadas para un look moderno */
+    border-radius: 25px;
+
+
+    /* Una sombra sutil oscura para dar profundidad */
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    color: var(--text-main);
+}
+
+/* Efecto HOVER: Cuando pasas el mouse por encima */
+.product-card:hover {
+    /* La tarjeta "flota" hacia arriba */
+    transform: translateY(-15px);
+    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.7);
+    background-color: #2a2a2e;
+    border: 1px solid var(--bg-app);
+}
+
+/* Estilo específico para las IMÁGENES dentro de las tarjetas */
+.product-img {
+
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid var(--bg-app);
+}
+
+.btn-outline-light {
+    background: var(--gradient-main);
+    border: 1px solid var(--bg-card);
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s;
+    /* Pequeña animación al pasar el mouse */
+}
+
+.btn-outline-light:hover {
+    transform: scale(1.05);
+    /* Crece un poquito */
+    color: white;
+    box-shadow: 0 0 15px rgba(112, 71, 209, 0.5);
+    /* Resplandor violeta */
+}
+
+/* --- ESTILOS DEL FOOTER --- */
+
+.footer-alke {
+    /* Usamos un color muy oscuro para la base */
+    background-color: #0f0f12;
+    border-top: 1px solid #2d2d30;
+    /* Una línea sutil arriba para separar */
+    color: var(--text-main);
+}
+
+/* Estilo de los enlaces */
+.footer-link {
+    color: #888;
+    /* Gris suave por defecto */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Cuando pasas el mouse por los enlaces */
+.footer-link:hover {
+    color: var(--success);
+    /* ¡Aquí brilla el verde! */
+    text-decoration: none;
+    padding-left: 5px;
+    /* Pequeño movimiento a la derecha */
+}
+
+/* Botones de redes sociales */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #1f1f23;
+    color: #fff;
+    border-radius: 50%;
+    /* Círculos perfectos */
+    display: flex;
+    /* Para centrar el icono dentro del círculo */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none !important;
+}
+
+.social-icon:hover {
+    background-color: var(--gradient-main);
+    /* Se pintan de morado al pasar */
+    transform: translateY(-3px);
+    /* Flotan un poquito */
+    color: white;
+}
+
+/* Inputs oscuros personalizados */
+.input-dark {
+    background-color: #2a2a2e;
+    /* Gris oscuro */
+    border: 1px solid #444;
+    /* Borde sutil */
+    color: white;
+    /* Texto blanco al escribir */
+    border-radius: 50px;
+    /* Bordes muy redondos */
+    padding: 20px;
+    /* Más espacio interno */
+}
+
+/* Cuando haces clic en el input */
+.input-dark:focus {
+    background-color: #333;
+    border-color: var(--success);
+    /* Se ilumina verde al escribir */
+    color: white;
+    box-shadow: none;
+    /* Quita el brillo azul de Bootstrap */
+}
+
+.modal-content {
+    background-color: var(--bg-app);
+    /* Fondo oscuro */
+    color: var(--text-main);
+    /* Texto blanco */
+    border: 1px solid var(--bg-app);
+    /* Borde sutil */
+    border-radius: 25px;
+    /* Esquinas redondeadas */
+    box-shadow: 0 10px 20px -10px rgba(65, 63, 63, 0.5);
+    /* Sombra sutil */
+
+}
+
+.modal-header {
+    background: var(--gradient-main);
+}
+
+
+.saldo-1{
+    background: var(--gradient-main); border-radius: 20px;
+    display: flexbox;
+    align-items: center;
+    max-height: 900px;
+    height: auto;
+}

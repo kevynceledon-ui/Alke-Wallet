@@ -4,6 +4,8 @@ Este es el proyecto final del modulo 2.
 
 ## Descripción 
 Esta es una billetera virtual que nos permite realizar tanto transferencias como depositos.
+Para ingresar se debe crear un usuario, para realizar transferencias se tiene que  crear los 2 usuarios
+esto funciona mediante el metodo de "localstorage", asi que todos estos usuarios pueden ser eliminados y creados por ud.
 
 ## Funcionaliad y tecnologías
 
